@@ -2,11 +2,14 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/mouse.h>
 
 #define BASE 0
 #define NAV  1
 #define SYM  2
 #define FN   3
+#define SCROLL 4
+#define MOUSE 5
 
 / {
     behaviors {
@@ -35,7 +38,7 @@
             quick-tap-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
-        };
+        };              
 
         hp_kp: hold_preferred_kp {
             compatible = "zmk,behavior-hold-tap";
@@ -45,6 +48,15 @@
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+        tp_layer: tap_preferred_layer {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&tog>;
+        };
     };
 
     keymap {
@@ -53,20 +65,20 @@
         base {
             display-name = "BASE";
             bindings = <
-                &none &kp Q       &kp W        &kp E       &kp R       &kp T        &kp Y       &kp U       &kp I       &kp O        &kp P          &none
-                &none &hrm LGUI A &hrm LCTRL S &hrm LALT D &kp F       &kp G        &kp H       &kp J       &hrm LALT K &hrm LCTRL L &hrm LGUI SEMI &none
-                &none &kp Z       &kp X        &kp C       &kp V       &kp B        &kp N       &kp M       &kp COMMA   &kp DOT      &kp FSLH       &none
-                                               &none  &hp_kp LSHFT TAB &hp NAV BSPC &tp NAV SPACE &hp SYM RET &none
+                &none &kp Q       &kp W        &kp F       &kp P       &kp B        &kp J       &kp L       &kp U       &kp Y        &kp SEMI       &none
+                &none &hrm LGUI A &hrm LCTRL R &hrm LALT S &kp T       &kp G        &kp M       &kp N       &hrm LALT E &hrm LCTRL I &hrm LGUI O    &none
+                &none &kp Z       &kp X        &kp C       &kp D       &kp V        &kp K       &kp H       &kp COMMA   &kp DOT      &kp FSLH       &none
+                                               &tp_layer SCROLL MOUSE &hp_kp LSHFT TAB &hp NAV SPACE  &tp NAV SPACE &hp SYM RET &none
             >;
         };
 
         nav {
             display-name = "NAV";
             bindings = <
-                &none &kp ESC     &kp HOME     &kp UP      &kp END     &kp PG_UP    &none       &kp N7      &kp N8      &kp N9       &kp KP_SLASH   &none
-                &none &kp LC(A)   &kp LEFT     &kp DOWN    &kp RIGHT   &kp PG_DN    &kp KP_MINUS &kp N4     &kp N5      &kp N6       &kp N0         &none
-                &none &kp LC(Z)   &kp LC(X)    &kp LC(C)   &kp LC(V)   &kp LC(Y)    &kp COMMA   &kp N1      &kp N2      &kp N3       &kp KP_DOT     &none
-                                               &none  &kp LS(TAB)      &mo FN       &mo FN      &kp RALT    &none
+                &none &kp ESC     &kp HOME     &kp UP      &kp END     &kp PG_UP    &kp FSLH        &kp N7      &kp N8      &kp N9       &kp KP_SLASH   &none
+                &none &kp LC(A)   &kp LEFT     &kp DOWN    &kp RIGHT   &kp PG_DN    &kp KP_MINUS    &kp N4      &kp N5      &kp N6       &kp N0         &none
+                &none &kp LC(Z)   &kp LC(X)    &kp LC(C)   &kp LC(V)   &kp LC(Y)    &kp COMMA       &kp N1      &kp N2      &kp N3       &kp DOT     &none
+                                               &none       &kp LS(TAB) &mo FN       &mo FN          &kp RALT    &none
             >;
         };
 
@@ -90,16 +102,24 @@
             >;
         };
 
-        extra_1 {
-            status = "reserved";
+        scroll {
+            display-name = "SCROLL";
+            bindings = <
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                              &trans &trans &trans &trans &trans &trans
+            >;
         };
 
-        extra_2 {
-            status = "reserved";
-        };
-
-        extra_3 {
-            status = "reserved";
+        mouse {
+            display-name = "MOUSE";
+            bindings = <
+                &to BASE &to BASE  &mkp MB4   &mkp MCLK  &mkp MB5   &to BASE     &to BASE &to BASE &to BASE &to BASE &to BASE &to BASE
+                &to BASE &to BASE  &to BASE   &mkp RCLK  &mkp LCLK  &to BASE     &to BASE &to BASE &to BASE &to BASE &to BASE &to BASE
+                &to BASE &kp LC(Z) &kp LC(X)  &kp LC(C)  &kp LC(V)  &to BASE     &to BASE &to BASE &to BASE &to BASE &to BASE &to BASE
+                                   &tog MOUSE &to BASE   &to BASE                &to BASE &to BASE &to BASE
+            >;
         };
     };
 };
