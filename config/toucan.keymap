@@ -48,7 +48,7 @@
         extend {
             display-name = "EXTEND";
             bindings = <
-                &none &kp ESC    &kp K_BACK &kp K_FIND  &kp K_FWD  &kp INSERT    &kp PG_UP  &kp HOME &kp UP   &kp END   &kp CAPSLOCK &none
+                &none &kp ESC    &kp C_AC_BACK &kp C_AC_SEARCH  &kp C_AC_FORWARD  &kp INSERT    &kp PG_UP  &kp HOME &kp UP   &kp END   &kp CAPSLOCK &none
                 &none &sk LSHIFT &sk LCTRL  &sk LALT    &sk LGUI   &sk RALT      &kp PG_DN  &kp LEFT &kp DOWN &kp RIGHT &kp BSPC     &none
                 &none &kp LC(Z)  &kp LC(X)  &kp LC(C)   &none      &kp LC(V)     &kp RET    &kp DEL  &kp TAB  &none     &kp PSCRN    &none
                                             &trans      &trans     &trans        &trans     &trans   &trans
