@@ -70,7 +70,7 @@
         combo_plus { timeout-ms = <50>; key-positions = <7 19>; bindings = <&kp NB_PLUS>; };
         combo_star { timeout-ms = <50>; key-positions = <8 20>; bindings = <&kp NB_STAR>; };
         combo_amps { timeout-ms = <50>; key-positions = <9 21>; bindings = <&kp NB_AMPS>; };
-        combo_equal { timeout-ms = <50>; key-positions = <10 22>; bindings = <&kp NB_EQUAL>; };
+        // combo_equal { timeout-ms = <50>; key-positions = <10 22>; bindings = <&kp NB_EQUAL>; };
 
         combo_leftbrace { timeout-ms = <50>; key-positions = <18 30>; bindings = <&kp NB_LEFT_BRACE>; };
         combo_rightbrace { timeout-ms = <50>; key-positions = <19 31>; bindings = <&kp NB_RIGHT_BRACE>; };
