@@ -39,22 +39,22 @@
 
         // Left Horizontal
         combo_esc { timeout-ms = <50>; key-positions = <2 3>; bindings = <&kp ESC>; };
-        combo_mouse { timeout-ms = <50>; key-positions = <3 4>; bindings = <&tog MOUSE>; };
+        // combo_mouse { timeout-ms = <50>; key-positions = <3 4>; bindings = <&tog MOUSE>; };
         combo_tab { timeout-ms = <50>; key-positions = <14 15>; bindings = <&kp TAB>; };
-        combo_copy { timeout-ms = <50>; key-positions = <26 27>; bindings = <&kp LC(C)>; };
-        combo_paste { timeout-ms = <50>; key-positions = <27 28>; bindings = <&kp LC(V)>; };
-        combo_cut { timeout-ms = <50>; key-positions = <26 28>; bindings = <&kp LC(X)>; };
+
+        combo_less { timeout-ms = <50>; key-positions = <26 27>; bindings = <&kp NB_LESS_THAN>; };
+        combo_greater { timeout-ms = <50>; key-positions = <27 28>; bindings = <&kp NB_GREATER_THAN>; };
 
         // Right Horizontal
         combo_bspc { timeout-ms = <50>; key-positions = <7 8>; bindings = <&kp BSPC>; };
         combo_del { timeout-ms = <50>; key-positions = <8 9>; bindings = <&kp DEL>; };
-        combo_bspc2 { timeout-ms = <50>; key-positions = <6 7>; bindings = <&kp BSPC>; };
         combo_lpar { timeout-ms = <50>; key-positions = <19 20>; bindings = <&kp NB_LPAR>; };
         combo_rpar { timeout-ms = <50>; key-positions = <20 21>; bindings = <&kp NB_RPAR>; };
         combo_lbkt { timeout-ms = <50>; key-positions = <31 32>; bindings = <&kp NB_LBKT>; };
         combo_rbkt { timeout-ms = <50>; key-positions = <32 33>; bindings = <&kp NB_RBKT>; };
 
         // Left Vertical
+        combo_excl { timeout-ms = <50>; key-positions = <1 13>; bindings = <&kp NB_EXCLAMATION>; };
         combo_at { timeout-ms = <50>; key-positions = <2 14>; bindings = <&kp NB_AT>; };
         combo_hash { timeout-ms = <50>; key-positions = <3 15>; bindings = <&kp NB_POUND>; };
         combo_dllr { timeout-ms = <50>; key-positions = <4 16>; bindings = <&kp NB_DLLR>; };
@@ -70,9 +70,10 @@
         combo_plus { timeout-ms = <50>; key-positions = <7 19>; bindings = <&kp NB_PLUS>; };
         combo_star { timeout-ms = <50>; key-positions = <8 20>; bindings = <&kp NB_STAR>; };
         combo_amps { timeout-ms = <50>; key-positions = <9 21>; bindings = <&kp NB_AMPS>; };
+        combo_equal { timeout-ms = <50>; key-positions = <10 22>; bindings = <&kp NB_EQUAL>; };
 
-        combo_under { timeout-ms = <50>; key-positions = <18 30>; bindings = <&kp NB_UNDER>; };
-        combo_minus { timeout-ms = <50>; key-positions = <19 31>; bindings = <&kp NB_MINUS>; };
+        combo_leftbrace { timeout-ms = <50>; key-positions = <18 30>; bindings = <&kp NB_LEFT_BRACE>; };
+        combo_rightbrace { timeout-ms = <50>; key-positions = <19 31>; bindings = <&kp NB_RIGHT_BRACE>; };
         combo_fslh { timeout-ms = <50>; key-positions = <20 32>; bindings = <&kp NB_FSLH>; };
         combo_pipe { timeout-ms = <50>; key-positions = <21 33>; bindings = <&kp NB_PIPE>; };
     };
@@ -83,40 +84,31 @@
         base {
             display-name = "BASE";
             bindings = <
-                &none &kp Q    &kp W    &kp E    &kp R    &kp T        &kp Y   &kp U   &kp I     &kp O   &kp P    &kp LBKT
-                &none &kp A    &kp S    &kp D    &kp F    &kp G        &kp H   &kp J   &kp K     &kp L   &kp SEMI &kp SQT
-                &none   &kp Z    &kp X    &kp C    &kp V    &kp B        &kp N   &kp M   &kp NB_COMMA &kp NB_PERIOD &kp NB_MINUS &none
-                               &tp_layer SCROLL MOUSE  &kp SPACE &mo EXTEND      &mo SYM &kp LSHIFT  &smart_num FN NUM
+                &none &kp Q    &kp W    &kp E    &kp R    &kp T        &kp Y   &kp U   &kp I     &kp O   &kp P    &kp NB_A_RING
+                &tp_layer SCROLL MOUSE &kp A    &kp S    &kp D    &kp F    &kp G        &kp H   &kp J   &kp K     &kp L   &kp NB_O_SLASH &kp NB_AE
+                &none  &kp Z    &kp X    &kp C    &kp V    &kp B        &kp N   &kp M   &kp NB_COMMA &kp NB_PERIOD &kp NB_MINUS &none
+                                 &none &kp SPACE &mo EXTEND       &kp RET &kp LSHIFT  &smart_num FN NUM
             >;
         };
 
         extend {
             display-name = "EXTEND";
             bindings = <
-                &none &kp ESC    &kp C_AC_BACK &kp C_AC_SEARCH  &kp C_AC_FORWARD  &kp INSERT    &kp PG_UP  &kp HOME &kp UP   &kp END   &kp CAPSLOCK &none
-                &none &sk LSHIFT &sk LCTRL  &sk LALT    &sk LGUI   &sk RALT      &kp PG_DN  &kp LEFT &kp DOWN &kp RIGHT &kp DEL     &none
-                &none &kp LC(Z)  &kp LC(X)  &kp LC(C)   &kp LC(V)  &kp LC(Y)     &kp RET    &kp BSPC  &kp TAB  &none     &kp PSCRN    &none
-                                            &trans      &trans     &trans        &trans     &trans   &trans
+                &none &none    &kp C_AC_BACK &kp C_AC_SEARCH  &kp C_AC_FORWARD  &kp INSERT    &kp PG_UP  &kp HOME &kp UP   &kp END   &kp CAPSLOCK &none
+                &none &sk LSHIFT &sk LCTRL  &sk LALT    &sk LGUI   &sk RALT                     &kp PG_DN  &kp LEFT &kp DOWN &kp RIGHT  &kp PSCRN     &none
+                &none &kp LC(Z)  &kp LC(X)  &kp LC(C)   &kp LC(V)  &kp LC(Y)                     &none &none &none  &none     &none    &none
+                                            &trans      &trans     &trans                       &trans     &trans   &trans
             >;
         };
 
-        sym {
-            display-name = "SYM";
-            bindings = <
-                &kp NB_CARET  &kp NB_EXCL   &kp NB_AT     &kp NB_POUND  &kp NB_DLLR   &kp NB_PRCNT      &kp NB_AMPS   &kp NB_FSLH  &kp NB_LPAR  &kp NB_RPAR  &kp NB_EQUAL  &kp NB_QMARK
-                &none         &sk LSHIFT    &sk LCTRL     &sk LALT      &sk LGUI      &sk RALT          &kp NB_LBRC   &kp NB_LBKT  &kp NB_RBKT  &kp NB_RBRC  &kp NB_BSLH   &kp NB_PLUS
-                &kp NB_SEMI   &kp NB_GRAVE  &kp NB_PIPE   &kp NB_LT     &kp NB_GT     &kp NB_TILDE      &kp NB_STAR   &kp NB_MINUS &kp NB_UNDER &kp NB_DQT   &kp NB_APOS   &kp NB_COLON
-                                            &trans        &trans        &trans                          &trans        &trans       &trans
-            >;
-        };
 
         num {
             display-name = "NUM";
             bindings = <
-                &none &none      &none      &none       &none      &none         &kp KP_DIVIDE   &kp N7 &kp N8 &kp N9 &kp KP_MINUS &none
-                &none &sk LSHIFT &sk LCTRL  &sk LALT    &sk LGUI   &sk RALT      &kp KP_MULTIPLY &kp N4 &kp N5 &kp N6 &kp KP_PLUS  &none
-                &none &none      &none      &none       &none      &none         &kp DOT         &kp N1 &kp N2 &kp N3 &kp RET      &none
-                                            &trans      &trans     &trans        &kp N0          &kp N0 &trans
+                &none &none      &none      &none       &none      &none         &none   &kp N7 &kp N8 &kp N9 &none &none
+                &none &sk LSHIFT &sk LCTRL  &sk LALT    &sk LGUI   &sk RALT      &none &kp N4 &kp N5 &kp N6 &none  &none
+                &none &none      &none      &none       &none      &none         &none         &kp N1 &kp N2 &kp N3 &none      &none
+                                            &trans      &trans     &trans        &none          &kp N0 &trans
             >;
         };
 
