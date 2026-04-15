@@ -62,7 +62,7 @@
 
         combo_grave { timeout-ms = <50>; key-positions = <14 26>; bindings = <&kp NB_GRAVE>; };
         combo_bslh { timeout-ms = <50>; key-positions = <15 27>; bindings = <&kp NB_BSLH>; };
-        combo_equal { timeout-ms = <50>; key-positions = <16 28>; bindings = <&kp NB_EQUAL>; };
+        // combo_equal { timeout-ms = <50>; key-positions = <16 28>; bindings = <&kp NB_EQUAL>; };
         combo_tilde { timeout-ms = <50>; key-positions = <17 29>; bindings = <&kp NB_TILDE>; };
 
         // Right Vertical
@@ -70,7 +70,7 @@
         combo_plus { timeout-ms = <50>; key-positions = <7 19>; bindings = <&kp NB_PLUS>; };
         combo_star { timeout-ms = <50>; key-positions = <8 20>; bindings = <&kp NB_STAR>; };
         combo_amps { timeout-ms = <50>; key-positions = <9 21>; bindings = <&kp NB_AMPS>; };
-        // combo_equal { timeout-ms = <50>; key-positions = <10 22>; bindings = <&kp NB_EQUAL>; };
+        combo_equal { timeout-ms = <50>; key-positions = <10 22>; bindings = <&kp NB_EQUAL>; };
 
         combo_leftbrace { timeout-ms = <50>; key-positions = <18 30>; bindings = <&kp NB_LEFT_BRACE>; };
         combo_rightbrace { timeout-ms = <50>; key-positions = <19 31>; bindings = <&kp NB_RIGHT_BRACE>; };
@@ -136,9 +136,9 @@
             display-name = "MOUSE";
             bindings = <
                 &to BASE &to BASE  &to BASE   &mkp MCLK  &to BASE   &to BASE     &to BASE &to BASE &to BASE &to BASE &to BASE &to BASE
-                &to BASE &mkp MB4   &mkp MB5   &mkp RCLK  &mkp LCLK  &mo SCROLL   &to BASE &to BASE &to BASE &to BASE &to BASE &to BASE
+                &tog MOUSE &mkp MB4   &mkp MB5   &mkp RCLK  &mkp LCLK  &mo SCROLL   &to BASE &to BASE &to BASE &to BASE &to BASE &to BASE
                 &to BASE &kp LC(Z)  &kp LC(X)  &kp LC(C)   &kp LC(V)  &kp LC(Y)    &to BASE &to BASE &to BASE &to BASE &to BASE &to BASE
-                                   &tog MOUSE &to BASE   &to BASE                &to BASE &to BASE &to BASE
+                                   &to BASE &to BASE   &to BASE                &to BASE &to BASE &to BASE
             >;
         };
     };
