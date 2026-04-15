@@ -32,6 +32,50 @@
             bindings = <&mo>, <&num_word>;
         };
     };
+
+    combos {
+        compatible = "zmk,combos";
+
+        // Left Horizontal
+        combo_esc { timeout-ms = <50>; key-positions = <2 3>; bindings = <&kp ESC>; };
+        combo_mouse { timeout-ms = <50>; key-positions = <3 4>; bindings = <&tog MOUSE>; };
+        combo_tab { timeout-ms = <50>; key-positions = <14 15>; bindings = <&kp TAB>; };
+        combo_copy { timeout-ms = <50>; key-positions = <26 27>; bindings = <&kp LC(C)>; };
+        combo_paste { timeout-ms = <50>; key-positions = <27 28>; bindings = <&kp LC(V)>; };
+        combo_cut { timeout-ms = <50>; key-positions = <26 28>; bindings = <&kp LC(X)>; };
+
+        // Right Horizontal
+        combo_bspc { timeout-ms = <50>; key-positions = <7 8>; bindings = <&kp BSPC>; };
+        combo_del { timeout-ms = <50>; key-positions = <8 9>; bindings = <&kp DEL>; };
+        combo_bspc2 { timeout-ms = <50>; key-positions = <6 7>; bindings = <&kp BSPC>; };
+        combo_lpar { timeout-ms = <50>; key-positions = <19 20>; bindings = <&kp LS(N8)>; };
+        combo_rpar { timeout-ms = <50>; key-positions = <20 21>; bindings = <&kp LS(N9)>; };
+        combo_lbkt { timeout-ms = <50>; key-positions = <31 32>; bindings = <&kp RA(N8)>; };
+        combo_rbkt { timeout-ms = <50>; key-positions = <32 33>; bindings = <&kp RA(N9)>; };
+
+        // Left Vertical
+        combo_at { timeout-ms = <50>; key-positions = <2 14>; bindings = <&kp RA(N2)>; };
+        combo_hash { timeout-ms = <50>; key-positions = <3 15>; bindings = <&kp LS(N3)>; };
+        combo_dllr { timeout-ms = <50>; key-positions = <4 16>; bindings = <&kp RA(N4)>; };
+        combo_prcnt { timeout-ms = <50>; key-positions = <5 17>; bindings = <&kp LS(N5)>; };
+
+        combo_grave { timeout-ms = <50>; key-positions = <14 26>; bindings = <&kp LS(EQUAL)>; };
+        combo_bslh { timeout-ms = <50>; key-positions = <15 27>; bindings = <&kp RA(MINUS)>; };
+        combo_equal { timeout-ms = <50>; key-positions = <16 28>; bindings = <&kp LS(N0)>; };
+        combo_tilde { timeout-ms = <50>; key-positions = <17 29>; bindings = <&kp RA(RBKT)>; };
+
+        // Right Vertical
+        combo_caret { timeout-ms = <50>; key-positions = <6 18>; bindings = <&kp LS(RBKT)>; };
+        combo_plus { timeout-ms = <50>; key-positions = <7 19>; bindings = <&kp MINUS>; };
+        combo_star { timeout-ms = <50>; key-positions = <8 20>; bindings = <&kp LS(BSLH)>; };
+        combo_amps { timeout-ms = <50>; key-positions = <9 21>; bindings = <&kp LS(N6)>; };
+
+        combo_under { timeout-ms = <50>; key-positions = <18 30>; bindings = <&kp LS(FSLH)>; };
+        combo_minus { timeout-ms = <50>; key-positions = <19 31>; bindings = <&kp FSLH>; };
+        combo_fslh { timeout-ms = <50>; key-positions = <20 32>; bindings = <&kp LS(N7)>; };
+        combo_pipe { timeout-ms = <50>; key-positions = <21 33>; bindings = <&kp RA(NON_US_BSLH)>; };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
