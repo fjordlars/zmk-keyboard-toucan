@@ -148,9 +148,9 @@
         fn {
             display-name = "FN";
             bindings = <
-                &none &none      &none      &none       &none      &none         &kp F12 &kp F7  &kp F8  &kp F9  &none &tog JIGGLE
-                &none &sk LSHIFT &sk LCTRL  &sk LALT    &sk LGUI   &sk RALT      &kp F11 &kp F4  &kp F5  &kp F6  &none &none
-                &none &bt BT_CLR &bt BT_PRV &bt BT_NXT  &none      &none         &kp F10 &kp F1  &kp F2  &kp F3  &none &none
+                &none &kp C_STOP &kp C_PREV &kp C_PP      &kp C_NEXT &none           &kp F12 &kp F7  &kp F8  &kp F9  &bt BT_SEL 0 &tog JIGGLE
+                &none &sk LSHIFT &sk LCTRL  &sk LALT    &sk LGUI   &sk RALT          &kp F11 &kp F4  &kp F5  &kp F6  &bt BT_SEL 1 &bt BT_SEL 2
+                &none &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &none     &none           &kp F10 &kp F1  &kp F2  &kp F3  &bt BT_CLR   &none
                                             &trans      &trans     &trans        &trans  &trans  &trans
             >;
         };
@@ -188,8 +188,8 @@
         win_shortcuts {
             display-name = "WIN";
             bindings = <
-                &kp TAB       &kp LALT(F4)  &kp LG(UP)    &kp LG(E)     &kp LG(R)     &none         &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5) &none
-                &kp LALT(ESC) &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(RIGHT) &kp LG(S)     &none         &none      &none      &none      &none      &none      &none
+                &kp TAB       &kp LA(F4)    &kp LG(UP)    &kp LG(E)     &kp LG(R)     &none         &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5) &none
+                &kp LA(ESC)   &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(RIGHT) &kp LG(S)     &none         &none      &none      &none      &none      &none      &none
                 &none         &kp LG(LS(S)) &kp LG(D)     &kp LC(C)     &kp LC(V)     &kp LG(V)     &none      &kp LG(L)  &kp LG(NB_DOT) &none  &none      &none
                                             &trans        &trans        &trans                      &trans     &trans     &trans
             >;
